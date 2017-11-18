@@ -2,6 +2,7 @@ package com.yazuo.intelligent.cache.annotation;
 
 import com.yazuo.intelligent.autoconfig.RedisCacheAutoConfiguration;
 import com.yazuo.intelligent.cache.ClearTimeBeanPostProcessor;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;
@@ -18,5 +19,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Import({ClearTimeBeanPostProcessor.class,RedisCacheAutoConfiguration.class})
+@EnableCaching
 public @interface EnableRedisCacheClear {
 }

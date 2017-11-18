@@ -3,7 +3,7 @@
 ### redis 缓存拓展
 
 - 提供注解式声明缓存的失效时间 `@Time`
-- 使用`@EnableRedisCacheClear` 启用
+- 使用`@EnableTimeCaching` 启用
 - 提供 秒,分,时,天 四种时间类型选择
 - 只对标注了 `Cacheable`和`CachePut`的注解生效
 - 类级别 只对标注了 `RestController` `Component` `Service` `Repository` 的注解生效

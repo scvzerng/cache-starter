@@ -19,6 +19,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Import({ClearTimeBeanPostProcessor.class,RedisCacheAutoConfiguration.class})
-@EnableCaching
 public @interface EnableRedisCacheClear {
 }

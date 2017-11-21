@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cache.interceptor.SimpleKey;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.DefaultRedisCachePrefix;
@@ -47,6 +48,10 @@ public class RedisCacheAutoConfiguration {
     private static final RedisSerializer FAST_JSON_REDIS_SERIALIZER = new RedisSerializer() {
         @Override
         public byte[] serialize(Object o) throws SerializationException {
+            //对SimpleKey的兼容
+            if(o instanceof SimpleKey){
+                return o.toString().getBytes();
+            }
             return JSON.toJSONBytes(o, SerializerFeature.WriteClassName);
         }
 

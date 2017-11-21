@@ -32,11 +32,10 @@ import static java.util.Arrays.stream;
  * To change this template use File | Settings | File Templates.
  */
 
-public class ClearTimeBeanPostProcessor implements BeanPostProcessor,ApplicationListener<ApplicationReadyEvent>,ApplicationContextAware {
+public class ClearTimeBeanPostProcessor implements BeanPostProcessor,ApplicationListener<ApplicationReadyEvent> {
     //key的失效时间
     private static final Map<String,Long> CLEAR_TIMES = new HashMap<>();
     private static final List<Class<? extends Annotation>> FILTER_ANNOTATIONS = new ArrayList<>();
-    private ApplicationContext context;
     static {
         FILTER_ANNOTATIONS.add(RestController.class);
         FILTER_ANNOTATIONS.add(Service.class);
@@ -99,13 +98,10 @@ public class ClearTimeBeanPostProcessor implements BeanPostProcessor,Application
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
-        Optional.ofNullable(context.getBean(RedisCacheManager.class)).ifPresent(redisCacheManager -> {
+        Optional.ofNullable(event.getApplicationContext().getBean(RedisCacheManager.class)).ifPresent(redisCacheManager -> {
             redisCacheManager.setExpires(CLEAR_TIMES);
         });
     }
 
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.context = applicationContext;
-    }
+
 }

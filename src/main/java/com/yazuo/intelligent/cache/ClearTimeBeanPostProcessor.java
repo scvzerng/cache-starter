@@ -3,6 +3,7 @@ package com.yazuo.intelligent.cache;
 import com.yazuo.intelligent.cache.annotation.Time;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.ApplicationContext;
@@ -31,7 +32,7 @@ import static java.util.Arrays.stream;
  * To change this template use File | Settings | File Templates.
  */
 
-public class ClearTimeBeanPostProcessor implements BeanPostProcessor,ApplicationListener<ContextRefreshedEvent>,ApplicationContextAware {
+public class ClearTimeBeanPostProcessor implements BeanPostProcessor,ApplicationListener<ApplicationReadyEvent>,ApplicationContextAware {
     //key的失效时间
     private static final Map<String,Long> CLEAR_TIMES = new HashMap<>();
     private static final List<Class<? extends Annotation>> FILTER_ANNOTATIONS = new ArrayList<>();
@@ -97,9 +98,8 @@ public class ClearTimeBeanPostProcessor implements BeanPostProcessor,Application
 
 
     @Override
-    public void onApplicationEvent(ContextRefreshedEvent event) {
+    public void onApplicationEvent(ApplicationReadyEvent event) {
         Optional.ofNullable(context.getBean(RedisCacheManager.class)).ifPresent(redisCacheManager -> {
-            //这边会被多次调用 最后一次才是所有的失效设置之前的都是无效的
             redisCacheManager.setExpires(CLEAR_TIMES);
         });
     }

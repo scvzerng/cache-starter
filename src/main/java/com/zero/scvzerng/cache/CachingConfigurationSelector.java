@@ -1,6 +1,6 @@
-package com.yazuo.intelligent.cache;
+package com.zero.scvzerng.cache;
 
-import com.yazuo.intelligent.cache.annotation.EnableTimeCaching;
+import com.zero.scvzerng.cache.annotation.EnableTimeCaching;
 import org.springframework.context.annotation.AdviceMode;
 import org.springframework.context.annotation.AdviceModeImportSelector;
 import org.springframework.context.annotation.AutoProxyRegistrar;
@@ -9,14 +9,7 @@ import org.springframework.util.ClassUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Administrator
- * Year: 2017-2017/11/19-0:38
- * Project:cache-starter
- * Package:com.yazuo.intelligent.autoconfig
- * To change this template use File | Settings | File Templates.
- */
+
 
 public class CachingConfigurationSelector extends AdviceModeImportSelector<EnableTimeCaching> {
 

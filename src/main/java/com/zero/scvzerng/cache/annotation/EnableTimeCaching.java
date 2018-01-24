@@ -1,22 +1,15 @@
-package com.yazuo.intelligent.cache.annotation;
+package com.zero.scvzerng.cache.annotation;
 
-import com.yazuo.intelligent.cache.CachingConfigurationSelector;
-import com.yazuo.intelligent.autoconfig.RedisCacheAutoConfiguration;
-import com.yazuo.intelligent.cache.ClearTimeBeanPostProcessor;
+import com.zero.scvzerng.autoconfig.RedisCacheAutoConfiguration;
+import com.zero.scvzerng.cache.CachingConfigurationSelector;
+import com.zero.scvzerng.cache.ClearTimeBeanPostProcessor;
 import org.springframework.context.annotation.AdviceMode;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.Ordered;
 
 import java.lang.annotation.*;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Administrator
- * Year: 2017-2017/11/19-0:46
- * Project:cache-starter
- * Package:com.yazuo.intelligent.cache.annotation
- * To change this template use File | Settings | File Templates.
- */
+
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented

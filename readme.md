@@ -10,7 +10,7 @@
 - 使用fastjson序列化与反序列化
 ### 依赖
 
-      <groupId>com.yazuo.intelligent</groupId>
+      <groupId>com.zero.scvzerng</groupId>
         <artifactId>cache-starter</artifactId>
         <version>{version}</version>
 

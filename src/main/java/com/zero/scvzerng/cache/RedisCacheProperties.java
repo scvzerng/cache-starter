@@ -1,4 +1,4 @@
-package com.yazuo.intelligent.cache;
+package com.zero.scvzerng.cache;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

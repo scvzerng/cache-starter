@@ -1,6 +1,6 @@
-package com.yazuo.intelligent.cache;
+package com.zero.scvzerng.cache;
 
-import com.yazuo.intelligent.cache.enums.TimeType;
+import com.zero.scvzerng.cache.enums.TimeType;
 import lombok.Data;
 import java.lang.annotation.Annotation;
 import java.util.Map;

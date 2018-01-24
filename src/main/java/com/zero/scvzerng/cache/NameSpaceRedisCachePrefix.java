@@ -1,4 +1,4 @@
-package com.yazuo.intelligent.cache;
+package com.zero.scvzerng.cache;
 
 import org.springframework.data.redis.cache.RedisCachePrefix;
 import org.springframework.data.redis.serializer.RedisSerializer;

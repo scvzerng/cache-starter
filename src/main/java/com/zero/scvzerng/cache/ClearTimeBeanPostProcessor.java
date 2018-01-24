@@ -1,15 +1,12 @@
-package com.yazuo.intelligent.cache;
+package com.zero.scvzerng.cache;
 
-import com.yazuo.intelligent.cache.annotation.Time;
+import com.zero.scvzerng.cache.annotation.Time;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -22,15 +19,6 @@ import java.util.*;
 
 import static java.util.Arrays.stream;
 
-
-/**
- * Created with IntelliJ IDEA.
- * User: Administrator
- * Year: 2017-2017/11/18-20:32
- * Project:xycrm_intelligent_service
- * Package:com.yazuo.intelligent.cache
- * To change this template use File | Settings | File Templates.
- */
 
 public class ClearTimeBeanPostProcessor implements BeanPostProcessor,ApplicationListener<ApplicationReadyEvent> {
     //key的失效时间

@@ -1,6 +1,6 @@
-package com.yazuo.intelligent.cache;
+package com.zero.scvzerng.cache;
 
-import com.yazuo.intelligent.cache.annotation.EnableTimeCaching;
+import com.zero.scvzerng.cache.annotation.EnableTimeCaching;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.cache.annotation.AbstractCachingConfiguration;
@@ -15,14 +15,7 @@ import org.springframework.context.annotation.Role;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.type.AnnotationMetadata;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Administrator
- * Year: 2017-2017/11/19-0:42
- * Project:cache-starter
- * Package:com.yazuo.intelligent.autoconfig
- * To change this template use File | Settings | File Templates.
- */
+
 @Configuration
 public class ProxyCachingConfiguration extends AbstractCachingConfiguration {
 

@@ -1,4 +1,4 @@
-package com.yazuo.intelligent.cache.enums;
+package com.zero.scvzerng.cache.enums;
 
 /**
  * Created with IntelliJ IDEA.
